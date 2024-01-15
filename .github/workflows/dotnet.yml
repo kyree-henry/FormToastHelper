@@ -3,6 +3,7 @@ name: .NET
 on:
   push:
     tags: [ "v*" ]
+    branches: [ "master" ]
 
 env: 
   NUGET_API_KEY: '{{ secrets.NUGET_API_KEY }}'
@@ -29,7 +30,7 @@ jobs:
         . .\build.ps1
         # Use the $version obtained from the "Get Version" action
         $env:Version = "${{ steps.get_version.outputs.version }}"
-        CIBuild
+        PrivateBuild
 
     - name: Display Version
       run: echo "Version is $env:Version"
