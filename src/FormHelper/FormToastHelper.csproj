@@ -5,7 +5,7 @@
     <Version>1.0</Version>
     <Authors>Kyree Henry, Sinan BOZKUS</Authors>
     <projectUrl>https://github.com/sinanbozkus/FormHelper</projectUrl>
-    <RepositoryUrl></RepositoryUrl>
+    <RepositoryUrl>https://github.com/kyree-henry/FormToastHelper</RepositoryUrl>
     <ProjectUrl>https://github.com/sinanbozkus/FormHelper</ProjectUrl>
     <description>Transform server-side validations to client-side without writing any javascript code. (Compatible with Fluent Validation)</description>
     <Copyright></Copyright>
