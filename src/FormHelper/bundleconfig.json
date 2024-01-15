@@ -1,0 +1,34 @@
+[
+  {
+    "outputFileName": "Styles/formhelper.min.css",
+    "inputFiles": [
+      "Styles/formhelper.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/formhelper.min.js",
+    "inputFiles": [
+      "Scripts/formhelper.js"
+    ]
+  },
+  {
+    "outputFileName": "Styles/jquery.toast.min.css",
+    "inputFiles": [
+      "Styles/jquery.toast.min.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/jquery.toast.min.js",
+    "inputFiles": [
+      "Scripts/jquerytoast.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/formhelper.bundle.min.js",
+    "inputFiles": [
+      "Scripts/jquery.validate.min.js",
+      "Scripts/jquery.validate.unobtrusive.min.js",
+      "Scripts/formhelper.js"
+    ]
+  }
+]
