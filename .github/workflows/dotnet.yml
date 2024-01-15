@@ -28,9 +28,8 @@ jobs:
     - name: Build Script
       run: |
         . .\build.ps1
-        # Use the $version obtained from the "Get Version" action
         $env:Version = "${{ steps.get_version.outputs.version }}"
-        PrivateBuild
+        CIBuild
 
     - name: Display Version
       run: echo "Version is $env:Version"
