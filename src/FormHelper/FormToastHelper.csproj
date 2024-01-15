@@ -5,7 +5,7 @@
     <Version>1.0</Version>
     <Authors>Kyree Henry, Sinan BOZKUS</Authors>
     <projectUrl>https://github.com/sinanbozkus/FormHelper</projectUrl>
-    <RepositoryUrl></RepositoryUrl>
+    <RepositoryUrl>https://github.com/kyree-henry/FormToastHelper</RepositoryUrl>
     <ProjectUrl>https://github.com/sinanbozkus/FormHelper</ProjectUrl>
     <description>Transform server-side validations to client-side without writing any javascript code. (Compatible with Fluent Validation)</description>
     <Copyright></Copyright>
@@ -16,11 +16,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="images\formhelper-icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   
   <PropertyGroup>
     <TargetFrameworks>netcoreapp31;net50;net60;net70</TargetFrameworks>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   
   <ItemGroup>
