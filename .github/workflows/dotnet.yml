@@ -25,11 +25,15 @@ jobs:
       id: get_version
       uses: battila7/get-version-action@v2
 
+    - name: Set Version
+      run: echo "Version=${{ steps.get_version.outputs.version-without-v }}" >> $GITHUB_STATE
+
+    - name: Display Version
+      run: echo "Version is ${{ steps.get_version.outputs.version-without-v }}" >> $GITHUB_OUTPUT
+
+
     - name: Build Script
       run: |
         . .\build.ps1
         $env:Version = "${{ steps.get_version.outputs.version }}"
         CIBuild
-
-    - name: Display Version
-      run: echo "Version is $env:Version"
