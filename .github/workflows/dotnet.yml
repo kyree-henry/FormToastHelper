@@ -4,6 +4,10 @@ on:
   push:
     tags: [ "v*" ]
 
+env: 
+  NUGET_API_KEY: '{{ secrets.NUGET_API_KEY }}'
+  BuildConfiguration: 'Release'
+
 jobs:
   build:
     runs-on: windows-latest
