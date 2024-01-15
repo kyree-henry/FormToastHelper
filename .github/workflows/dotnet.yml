@@ -1,0 +1,32 @@
+name: .NET
+
+on:
+  push:
+    tags: [ "v*" ]
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Get Version
+      id: get_version
+      uses: battila7/get-version-action@v2
+
+    - name: Build Script
+      run: |
+        . .\build.ps1
+        # Use the $version obtained from the "Get Version" action
+        $env:Version = "${{ steps.get_version.outputs.version }}"
+        CIBuild
+
+    - name: Display Version
+      run: echo "Version is $env:Version"
