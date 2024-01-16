@@ -22,10 +22,10 @@ jobs:
       uses: battila7/get-version-action@v2
 
     - name: Set Api Key
-      run: echo "NUGET_API_KEY=${{ secrets.NUGET_API_KEY }}" >> "$GITHUB_ENV"
+      run: echo "NUGET_API_KEY=${{ secrets.NUGET_API_KEY }}" >> $env:GITHUB_ENV
 
     - name: Set Version
-      run: echo "Version=1.0.0" >> "$GITHUB_ENV"
+      run: echo "Version=1.0.0" >> $env:GITHUB_ENV
 
     - name: Display Api Key
       run: echo "Version is $env:NUGET_API_KEY"
