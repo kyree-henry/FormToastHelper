@@ -3,8 +3,6 @@ name: .NET
 on:
   push:
     tags: [ "v*" ]
-    branches: [ "master" ]
-
 
 jobs:
   build:
@@ -23,15 +21,10 @@ jobs:
       uses: battila7/get-version-action@v2
 
     - name: Set Api Key
-      run: echo "NUGET_API_KEY=${{ steps.get_version.outputs.version-without-v }}" >> "$GITHUB_ENV"
+      run: echo "NUGET_API_KEY=${{ secrets.NUGET_API_KEY }}" >> "$GITHUB_ENV"
 
     - name: Set Version
       run: echo "Version=${{ steps.get_version.outputs.version-without-v }}" >> "$GITHUB_ENV"
-
-
-    - name: Display Version
-      run: echo "Version is ${{ steps.get_version.outputs.version-without-v }}" >> "$GITHUB_ENV"
-
 
     - name: Build Script
       run: |
