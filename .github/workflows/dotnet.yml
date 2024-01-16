@@ -3,13 +3,12 @@ name: .NET
 on:
   push:
     tags: [ "v*" ]
-    branches: [ "master" ]
 
 env: 
-  NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
   BuildConfiguration: 'Release'
-  PROJECT_PATH: 'FormToastHelper\src\FormHelper\FormToastHelper.csproj'
+  NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
   PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
+  PROJECT_PATH: 'FormToastHelper\src\FormHelper\FormToastHelper.csproj'
 
 jobs:
   build:
@@ -24,14 +23,14 @@ jobs:
         dotnet-version: 7.0.x
 
     - name: Get Version
-      id: get_version
+      id: version
       uses: battila7/get-version-action@v2
 
     - name: Set Version
-      run: echo "Version=1.0.0" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+      run: echo "Version=${{ steps.version.outputs.version-without-v }}" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
-    - name: Display Api Key
-      run: echo "Version is $env:NUGET_API_KEY"
+    - name: Display Version
+      run: echo "Version is $env:Version"
 
     - name: Build Script
       run: |
