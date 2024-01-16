@@ -6,6 +6,7 @@ on:
     branches: [ "master" ]
 
 env: 
+  NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
   BuildConfiguration: 'Release'
   PROJECT_PATH: 'FormToastHelper\src\FormHelper\FormToastHelper.csproj'
   PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
