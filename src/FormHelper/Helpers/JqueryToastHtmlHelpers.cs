@@ -15,7 +15,7 @@ namespace FormToastHelper
                                 $(document).ready(function () {{
                                     const $form = $('#{config.FormId}');
                                     
-                                    $form.attr('jqueryToast')
+                                    $form.attr('jquerytoast')
                                     $form.attr('dataType', '{config.DataType}');
                                     $form.attr('CheckTheFormFieldsMessage', '{configuration.CheckTheFormFieldsMessage}');
                                     $form.attr('redirectDelay', '{configuration.RedirectDelay}');

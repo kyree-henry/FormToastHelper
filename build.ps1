@@ -73,7 +73,7 @@ Function PrivateBuild{
 Function CIBuild{
 	$sw = [Diagnostics.Stopwatch]::StartNew()
 	Init
-	Compile
+	# Compile
 	Package
 	Push
 	$sw.Stop()
