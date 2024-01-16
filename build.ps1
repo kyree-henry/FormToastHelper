@@ -4,7 +4,7 @@ $startTime =
 $verbosity = "m"
 $version = $env:Version
 $base_dir = resolve-path .\
-$nuget_source_Url = "https://api.nuget.org/v3/index.json"
+$$nugetSourceUrl = "https://api.nuget.org/v3/index.json"
 $projectName = "FormToastHelper"
 $nugetApiKey = $env:NUGET_API_KEY
 $projectConfig = $env:BuildConfiguration
@@ -55,7 +55,7 @@ Function Package{
 Function Push{
 	Write-Output "Pushing NuGet package: $projectName version $version"
 	exec{
-		& dotnet nuget push -k $nugetApiKey -k $nugetApiKey 
+		& dotnet nuget push -k $nugetApiKey -s $nugetSourceUrl 
 	}
 }
 
