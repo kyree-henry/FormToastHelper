@@ -8,8 +8,8 @@ $nugetSourceUrl = "https://api.nuget.org/v3/index.json"
 $projectName = "FormToastHelper"
 $nugetApiKey = $env:NUGET_API_KEY
 $projectConfig = $env:BuildConfiguration
-$output_dir = env:PACKAGE_OUTPUT_DIRECTORY
-$project_dir = env:PROJECT_PATH
+$output_dir = $env:PACKAGE_OUTPUT_DIRECTORY
+$project_dir = $env:PROJECT_PATH
 $framework = "net7.0"
 
 $build_dir = "$base_dir\build"
