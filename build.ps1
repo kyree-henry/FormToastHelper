@@ -9,7 +9,7 @@ $projectName = "FormToastHelper"
 $nugetApiKey = $env:NUGET_API_KEY
 $projectConfig = $env:BuildConfiguration
 $output_dir = $env:PACKAGE_OUTPUT_DIRECTORY
-$project_dir = $project_dir = "$base_dir\src\FormHelper\FormToastHelper.csproj"
+$project_dir = "$base_dir\src\FormHelper\FormToastHelper.csproj"
 $framework = "net7.0"
 
 $build_dir = "$base_dir\build"
