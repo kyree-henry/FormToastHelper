@@ -27,6 +27,9 @@ jobs:
     - name: Set Version
       run: echo "Version=1.0.0" >> "$GITHUB_ENV"
 
+    - name: Display Api Key
+      run: echo "Version is $env:NUGET_API_KEY"
+
     - name: Build Script
       run: |
         . .\build.ps1
