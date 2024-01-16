@@ -8,6 +8,8 @@ $nugetSourceUrl = "https://api.nuget.org/v3/index.json"
 $projectName = "FormToastHelper"
 $nugetApiKey = $env:NUGET_API_KEY
 $projectConfig = $env:BuildConfiguration
+$output_dir = env:PACKAGE_OUTPUT_DIRECTORY
+$project_dir = env:PROJECT_PATH
 $framework = "net7.0"
 
 $build_dir = "$base_dir\build"
@@ -48,14 +50,14 @@ Function Package{
 	dotnet tool install --global Octopus.DotNet.Cli | Write-Output $_ -ErrorAction SilentlyContinue #prevents red color is already installed
     
 	exec{
-		& dotnet pack -c Release --no-build /p:PackageVersion=$version
+		& dotnet pack $project_dir --no-restore --no-build --configuration Release --include-symbols /p:PackageVersion=$version --output $output_dir
 	}
 }
 
 Function Push{
 	Write-Output "Pushing NuGet package: $projectName version $version"
 	exec{
-		& dotnet nuget push -k $nugetApiKey -s $nugetSourceUrl 
+		& dotnet nuget push $output_dir\*.nupkg -k $nugetApiKey -s $nugetApiKey 
 	}
 }
 
