@@ -57,7 +57,7 @@ Function Package{
 Function Push{
 	Write-Output "Pushing NuGet package: $projectName version $version"
 	exec{
-		& dotnet nuget push $output_dir\*.nupkg -k $nugetApiKey -s $nugetApiKey 
+		& dotnet nuget push $output_dir\*.nupkg -k $nugetApiKey -s $nugetSourceUrl 
 	}
 }
 
